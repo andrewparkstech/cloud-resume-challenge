@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jobby McJobface — Resume</title>
+
+  <!-- Optional: use a classic serif for the name and a readable sans for details -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#222;
+      --panel:#1e1e1e;
+      --muted:#cfcfcf;
+      --accent:#44a6c8;
+      --white:#f7f7f7;
+      --rule:#3a3a3a;
+      --bullet:#bbbbbb;
+      --max-width:900px;
+    }
+
+    html,body{
+      height:100%;
+      margin:0;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:var(--bg);
+      color:var(--muted);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    .wrap{
+      max-width:var(--max-width);
+      margin:32px auto;
+      padding:36px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.03));
+      border:1px solid rgba(255,255,255,0.03);
+      box-shadow: 0 6px 30px rgba(0,0,0,0.6);
+    }
+
+    header {
+      display:flex;
+      align-items:flex-end;
+      gap:24px;
+      border-bottom:2px solid var(--rule);
+      padding-bottom:18px;
+      margin-bottom:18px;
+    }
+
+    .name {
+      font-family:"Playfair Display", Georgia, "Times New Roman", serif;
+      color:var(--white);
+      font-size:44px;
+      line-height:1;
+      margin:0;
+      letter-spacing:0.5px;
+    }
+
+    .contact {
+      margin-left:auto;
+      text-align:right;
+      font-size:14px;
+      color:var(--muted);
+      display:flex;
+      gap:8px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    .contact a {
+      color:var(--accent);
+      text-decoration:underline;
+      text-underline-offset:3px;
+    }
+
+    .section-title {
+      display:flex;
+      align-items:center;
+      gap:12px;
+      margin:18px 0 8px 0;
+    }
+
+    .section-title h2{
+      font-size:12px;
+      margin:0;
+      color:var(--white);
+      letter-spacing:1px;
+      text-transform:uppercase;
+      font-weight:700;
+    }
+
+    /* work / job list */
+    .work {
+      margin-top:12px;
+    }
+
+    .job {
+      display:block;
+      padding:10px 0;
+      border-bottom:1px solid var(--rule);
+      margin-bottom:10px;
+    }
+
+    .job .job-head {
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      align-items:flex-start;
+    }
+
+    .company {
+      font-weight:700;
+      color:var(--white);
+      font-size:15px;
+    }
+
+    .job .dates {
+      color:var(--muted);
+      font-size:13px;
+      white-space:nowrap;
+    }
+
+    .job .title {
+      display:block;
+      color:var(--accent);
+      font-weight:600;
+      margin-top:4px;
+      font-size:13px;
+    }
+
+    .job ul {
+      margin:8px 0 12px 18px;
+      padding:0;
+      color:var(--muted);
+      line-height:1.45;
+    }
+
+    .job ul li{
+      margin:6px 0;
+      list-style:disc;
+    }
+
+    .job ul li ul {
+      margin-top:6px;
+      margin-left:18px;
+      list-style:circle;
+    }
+
+    /* education and small lists */
+    .education, .skills {
+      margin-top:6px;
+      padding-top:6px;
+      border-top:1px solid var(--rule);
+    }
+
+    .edu-row {
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      align-items:flex-start;
+    }
+
+    .edu-left { color:var(--white); font-weight:700; }
+    .edu-right { color:var(--muted); font-size:13px; }
+
+    .muted-note { color:var(--muted); font-size:13px; margin-top:6px; }
+
+    /* bullet marker style similar to image (small circle) */
+    li::marker{
+      color:var(--bullet);
+    }
+
+    footer{
+      margin-top:16px;
+      border-top:2px solid var(--rule);
+      padding-top:12px;
+      color:var(--muted);
+      font-size:12px;
+    }
+
+    /* responsive */
+    @media (max-width:640px){
+      .name { font-size:32px; }
+      .contact { text-align:left; margin-top:8px; width:100%;}
+      header { flex-direction:column; align-items:flex-start; gap:6px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap" role="main" aria-label="Resume of Jobby McJobface">
+    <header>
+      <h1 class="name">Jobby McJobface</h1>
+
+      <div class="contact" aria-label="Contact information">
+        <div>hey@sheetsresume.com</div>
+        <div>|</div>
+        <div>(555) 555-5555</div>
+        <div>|</div>
+        <div>Denver, CO</div>
+        <div>|</div>
+        <div><a href="#" aria-label="Portfolio link">Portfolio</a> / <a href="#" aria-label="GitHub link">GitHub link</a></div>
+      </div>
+    </header>
+
+    <!-- WORK EXPERIENCE -->
+    <section class="work-section" aria-labelledby="work-heading">
+      <div class="section-title">
+        <h2 id="work-heading">Work Experience</h2>
+      </div>
+
+      <div class="work">
+        <!-- Company: SheetsResume.com -->
+        <article class="job" aria-labelledby="job1-company">
+          <div class="job-head">
+            <div>
+              <div id="job1-company" class="company">SheetsResume.com</div>
+              <div class="title">Co-Founder</div>
+            </div>
+            <div class="dates">Aug. 2023 — Present<br><span style="color:var(--muted); font-size:12px;">Remote</span></div>
+          </div>
+
+          <ul>
+            <li><strong>SheetsResume.com</strong> is an online repository of free and paid resume and job seeking resources used by millions.</li>
+            <li>Ideation, product management, &amp; marketing for AI-powered <em>Resume Builder, Cover Letters, &amp; Mock Interviews</em>.
+              <ul>
+                <li>Stack: JavaScript (React); PHP (Laravel + Inertia); Linux (Ubuntu); Nginx; OpenAI; Gemini; MySQL</li>
+              </ul>
+            </li>
+            <li>Core responsibility #1. Pretend this is where they stop reading your resume. You've got 10 seconds. Use them.</li>
+          </ul>
+        </article>
+
+        <!-- Company Name #2 -->
+        <article class="job" aria-labelledby="job2-company">
+          <div class="job-head">
+            <div>
+              <div id="job2-company" class="company">Company Name #2</div>
+              <div class="title">Job Title</div>
+            </div>
+            <div class="dates">Oct. 2017 — Jul. 2023<br><span style="color:var(--muted); font-size:12px;">City, ST</span></div>
+          </div>
+
+          <ul>
+            <li>Lead with a company overview to borrow validity from the company's numbers to anchor the screener on something super impressive. E.g., sales, market cap, Fortune 500 status, # of users, # of employees, $ raised, etc.</li>
+            <li>As [role], I [core responsibilities that match the job description, including some high-level numbers if impressive].
+              <ul>
+                <li><em>Key Results:</em> Use sub-bullets to list quantifiable key results for specific projects or responsibilities. E.g., revenue, cost savings, man hours saved, partners onboarded, customers/users acquired, review rating, etc.</li>
+                <li>Sub-bullets are for more detail if needed, like KPIs, your tech stack, notable clients, or project examples.</li>
+              </ul>
+            </li>
+          </ul>
+        </article>
+
+        <!-- Company Name #3 -->
+        <article class="job" aria-labelledby="job3-company">
+          <div class="job-head">
+            <div>
+              <div id="job3-company" class="company">Company Name #3</div>
+              <div class="title">Job Title</div>
+            </div>
+            <div class="dates">Month Year — Month Year<br><span style="color:var(--muted); font-size:12px;">City, ST (Or just put "Remote")</span></div>
+          </div>
+
+          <ul>
+            <li>Core responsibility / achievements / summary of job or company. Abbreviate all month names (eg. "Jul" not "July").</li>
+            <li><strong>Key Result:</strong> Nest further context as sub-bullet points to really highlight an important top-level bullet.</li>
+            <li>Core responsibility #2. Bold and italicize words very sparingly: "When everyone is super, no one will be."</li>
+          </ul>
+        </article>
+
+        <!-- Company Name #5 (promotions) -->
+        <article class="job" aria-labelledby="job5-company">
+          <div class="job-head">
+            <div>
+              <div id="job5-company" class="company">Company Name #5</div>
+              <div class="title">Current Job Title | Month, Year — Present</div>
+            </div>
+            <div class="dates">City, ST</div>
+          </div>
+
+          <ul>
+            <li>If you've been promoted / have held multiple titles at one company, put dates in italics next to each title like so.</li>
+            <li>Core responsibility #2. As the jobs get older in your timeline, they're less relevant and need fewer bullet points.</li>
+            <li><em>Prior Job Title | Month, Year — Month, Year</em><br> "Prior to my promotion to [current title], I..." core responsibility #1. Older job, less relevancy, 1 bullet is fine.</li>
+          </ul>
+        </article>
+
+        <!-- Company Name #6 -->
+        <article class="job" aria-labelledby="job6-company">
+          <div class="job-head">
+            <div>
+              <div id="job6-company" class="company">Company Name #6</div>
+              <div class="title">Job Title</div>
+            </div>
+            <div class="dates">Month Year — Month Year<br><span style="color:var(--muted); font-size:12px;">City, ST</span></div>
+          </div>
+
+          <ul>
+            <li>Core responsibility #1. Even older job. For past jobs with zero relevance, save space and skip any bullet points.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="education" aria-labelledby="edu-heading">
+      <div class="section-title" style="margin-top:20px;">
+        <h2 id="edu-heading">Education</h2>
+      </div>
+
+      <div class="edu-row" style="margin-top:6px;">
+        <div class="edu-left">University Name</div>
+        <div class="edu-right">Graduation Month, Year</div>
+      </div>
+
+      <div class="muted-note" style="margin-top:6px;">
+        Degree (e.g., B.S.), Majors (e.g., Computer Science) — City, ST<br>
+        • GPA: 3.X/4.0 (list only if GPA is over 3.3); list any honors like <em>Summa Cum Laude</em> or Economics Honors Society.
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS, SKILLS & INTERESTS -->
+    <section class="skills" aria-labelledby="skills-heading">
+      <div class="section-title" style="margin-top:18px;">
+        <h2 id="skills-heading">Certifications, Skills &amp; Interests</h2>
+      </div>
+
+      <ul style="margin-left:18px;">
+        <li><strong>Certifications:</strong> If you have relevant ones; otherwise delete this bullet point + "<em>CERTIFICATIONS</em>" above.</li>
+        <li><strong>Technologies:</strong> If you have a lot of hard skills vs soft skills, you can break them out into two different bullets.</li>
+        <li><strong>Skills:</strong> Strategic Planning; Brand Marketing; Copywriting; Hiring</li>
+        <li><strong>Interests:</strong> Camping; Composting; Yoga; Traveling; Fishing; Reddit; <em>Seinfeld</em></li>
+      </ul>
+    </section>
+
+    <footer>
+      <div>References available upon request · Resume generated from template screenshot</div>
+    </footer>
+
+  </div>
+</body>
+</html>
