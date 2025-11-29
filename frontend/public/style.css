@@ -1,0 +1,160 @@
+:root{
+  --bg:#222;
+  --panel:#1e1e1e;
+  --muted:#cfcfcf;
+  --accent:#44a6c8;
+  --white:#f7f7f7;
+  --rule:#3a3a3a;
+  --bullet:#bbbbbb;
+  --max-width:900px;
+}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--muted);
+  font-family: "Inter", sans-serif;
+}
+
+.wrap{
+  max-width:var(--max-width);
+  margin:32px auto;
+  padding:36px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.03));
+  border:1px solid rgba(255,255,255,0.03);
+  box-shadow:0 6px 30px rgba(0,0,0,0.6);
+}
+
+/* HEADER */
+header{
+  display:flex;
+  align-items:flex-end;
+  gap:24px;
+  border-bottom:2px solid var(--rule);
+  padding-bottom:18px;
+  margin-bottom:18px;
+}
+
+.name{
+  font-family:"Playfair Display", serif;
+  color:var(--white);
+  font-size:44px;
+  margin:0;
+}
+
+.contact{
+  margin-left:auto;
+  text-align:right;
+  font-size:14px;
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.contact a{
+  color:var(--accent);
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+
+/* SECTIONS */
+.section-title h2{
+  font-size:12px;
+  margin:0;
+  color:var(--white);
+  text-transform:uppercase;
+  letter-spacing:1px;
+  font-weight:700;
+}
+
+.work .job{
+  padding:10px 0;
+  border-bottom:1px solid var(--rule);
+  margin-bottom:10px;
+}
+
+/* JOB HEADERS */
+.job-head{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+}
+
+.company{
+  font-weight:700;
+  color:var(--white);
+  font-size:15px;
+}
+
+.title{
+  color:var(--accent);
+  font-size:13px;
+  font-weight:600;
+  margin-top:4px;
+}
+
+.dates{
+  font-size:13px;
+  text-align:right;
+}
+
+.dates span{
+  color:var(--muted);
+  font-size:12px;
+}
+
+/* LISTS */
+.job ul{
+  margin:8px 0 12px 18px;
+  line-height:1.45;
+}
+
+.job li::marker{
+  color:var(--bullet);
+}
+
+.job ul ul{
+  margin-top:6px;
+  margin-left:18px;
+  list-style:circle;
+}
+
+/* EDUCATION */
+.edu-row{
+  display:flex;
+  justify-content:space-between;
+  margin-top:6px;
+}
+
+.edu-left{
+  color:var(--white);
+  font-weight:700;
+}
+
+.edu-right{
+  font-size:13px;
+}
+
+.muted-note{
+  font-size:13px;
+  margin-top:6px;
+}
+
+/* SKILLS */
+.skills ul{
+  margin-left:18px;
+  line-height:1.45;
+}
+
+/* RESPONSIVE */
+@media (max-width:640px){
+  .name { font-size:32px; }
+  header{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  .contact{
+    text-align:left;
+    margin-top:8px;
+  }
+}
