@@ -31,3 +31,12 @@ I prompted ChatGPT within the same thread `let's use a separate css file` and it
 #### Light and Dark mode
 I wanted the user to be able to choose light or dark mode so I added JavaScipt and a button to support this. It will use the system mode, or the user can override using the toggle button.
 
+### Setting up a temp HTTP server
+Set up a temp HTTP server if you want to preview the page within a Cloud Dev Environment. For a local system, a browser can interpret the HTML page and CSS directly.
+
+#### Install HTTP Server
+```
+npm i http-server -g
+```
+
+
