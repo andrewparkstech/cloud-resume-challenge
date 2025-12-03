@@ -121,12 +121,31 @@ body {
 
 /* HEADER */
 header {
+  background: rgb(0,0,0);
   display: flex;
   align-items: flex-end;
   gap: 24px;
   border-bottom: 2px solid var(--rule);
   padding-bottom: 18px;
   margin-bottom: 18px;
+}
+
+header nav {
+  display: flex;
+  flex-direction: row;
+}
+
+header nav a {
+  padding: 24px;
+  color: rgb(255,255,255);
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+header nav a.active {
+  background: rgba(255,255,255,0.2)
 }
 
 .name {
